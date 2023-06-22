@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Lab 5</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css')}}">
+</head>
+
+<body>
+    <div class="content-body">
+        <div>
+            <button id="searchGrade">Search student grade</button>
+            <button id="listGrade">List student grades</button>
+            <button id="createGrade">Create student grade</button>
+            <button id="editGrade">Edit student grade</button>
+            <button id="deleteGrade">Delete student grade</button>
+            <p id="content"></p>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='index.js')}}"></script>
+</body>
+
+</html>

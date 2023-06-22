@@ -1,0 +1,88 @@
+*, *::before,*::after{
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: normal;
+}
+body{
+    padding: 0;
+    margin: 0;
+    
+}
+
+.calculator-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator-grid{
+    display: grid;
+    padding: 15px;
+    /* border-radius: 33px; */
+    justify-content: center;
+    align-content: center;
+    box-shadow: inset 5px 5px 10px whitesmoke,
+                      5px 5px 10px rgba(0, 0, 0, 0.16);
+                       
+
+    grid-template-columns: repeat(4,100px);
+    grid-template-rows: minmax(120px, auto)repeat(5, 70px);
+    background: grey;
+
+}
+
+.calculator-grid > button{
+    cursor: pointer;
+    font-size: 2rem;
+    padding: 5px;
+    border-radius: 12px;
+    margin: 5px;
+}
+
+
+
+.output{
+    grid-column: span 3;
+    background-color:rgb(241, 230, 230);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding:60px;
+    word-wrap: break-word;
+    word-break: break-all;
+    border: 5px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    height: 40px;
+    overflow: hidden;
+    
+}
+
+.output .previous-operand{
+    color: black;
+    font-size: 1.5rem;
+}
+
+
+.output .current-operand{
+    color:black;
+    font-size: 2.5rem;
+}
+
+.numberbtn {
+    background-color: #25a5be;
+    color: black;
+  }
+  
+  .clear{
+    background-color: #9c470e;
+  }
+
+  .active{
+    
+    background-color: #61a055;
+  }
+
+
