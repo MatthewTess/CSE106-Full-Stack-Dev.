@@ -1,0 +1,67 @@
+{% extends 'admin/base.html' %}
+
+{% block content %}
+  <h1>Manage Enrollments</h1>
+
+    <h2>Add Enrollment</h2>
+
+    <form method="POST">
+        <input type="hidden" name="action" value="add">
+        <label for="student_id">Student:</label>
+        <select name="student_id">
+            {% for student in students %}
+            <option value="{{ student.id }}">{{ student.name }}</option>
+            {% endfor %}
+        </select>
+   <label for="class_id">Class:</label>
+<select name="class_id">
+    {% for cls in classes %}
+    <option value="{{ cls.id }}">{{ cls.class_name }}</option>
+    {% endfor %}
+</select>
+        <button type="submit">Add Enrollment</button>
+    </form>
+
+    <h2>Enrollments</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Student Name</th>
+                <th>Class Name</th>
+                <th>Teacher Name</th>
+                <th>Enrollments</th>
+                <th>Grade</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for enrollment in enrollments %}
+            <tr>
+                <td>{{ enrollment.id }}</td>
+                <td>{{ enrollment.student.name }}</td>
+                <td>{{ enrollment.class.class_name }}</td>
+                <td>{{ enrollment.class.class_teacher.name }}</td>
+                 <td>{{ enrollment.class.enrolled }}/{{ enrollment.class.capacity }}</td>
+                <td>{{ enrollment.grade }}</td>
+                <td>
+                    <form method="POST" style="display: inline;">
+                        <input type="hidden" name="action" value="delete">
+                        <input type="hidden" name="enrollment_id" value="{{ enrollment.id }}">
+                        <button type="submit">Delete</button>
+                    </form>
+                    <form method="POST" style="display: inline;">
+                        <input type="hidden" name="action" value="update">
+                        <input type="hidden" name="enrollment_id" value="{{ enrollment.id }}">
+                        <input type="number" name="grade" placeholder="New Grade" min="0" max="100" step="1">
+                        <button type="submit">Update Grade</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+
+{% endblock %}

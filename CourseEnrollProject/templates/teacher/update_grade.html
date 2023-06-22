@@ -1,0 +1,20 @@
+{% extends 'teacher/base.html' %}
+
+{% block content %}
+    <div>
+
+    </div>
+    <h3>Update grade</h3>
+    <form action="" method="post">
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+            {{ form.grade.label(class="form-label") }}
+            {{ form.grade(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.submit(class="submit-btn") }}
+        </div>
+    </form>
+{#    {{ form }}#}
+
+{% endblock %}

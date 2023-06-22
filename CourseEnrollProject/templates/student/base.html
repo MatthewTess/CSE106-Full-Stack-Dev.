@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<header class="site-header">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="shortcut icon" type="image/png" href="{{ url_for('static',filename='favicon.png') }}">
+    <title>NovaTech University</title>
+    <div class="logo">
+        <a href="{{ url_for('home') }}"><img src="{{ url_for('static', filename='img/logo.png') }}"
+                                             alt="NovaTech University logo"/></a>
+        <h1><a href="{{ url_for('home') }}">NovaTech University</a></h1>
+    </div>
+
+    <nav class="site-navigation">
+        <ul class="nav">
+
+            <li><a style="background-color: lightseagreen" href="{{ url_for('student') }}">{{session.get('name')}}</a></li>
+            <li><a style="background-color: cornflowerblue" href="{{ url_for('logout') }}">Log Out</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+<body>
+
+<nav class="vertical-nav">
+    <ul>
+
+        <li><a href="{{ url_for('student') }}">View Grades</a></li>
+        <li><a href="{{ url_for('register_class') }}">Add Class</a></li>
+        <li><a href="{{ url_for('drop') }}">Drop Class</a></li>
+    </ul>
+</nav>
+<div class="main-content">
+
+    <main>
+
+        {% block content %}
+        {% endblock %}
+
+
+    </main>
+</div>
+
+</body>
+</html>

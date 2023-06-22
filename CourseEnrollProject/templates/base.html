@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<header class="site-header">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="shortcut icon" type="image/png" href="{{ url_for('static',filename='img/favicon.png') }}">
+    <title>NovaTech University</title>
+    <div class="logo">
+        <a href="{{ url_for('home') }}"><img src="{{ url_for('static', filename='img/logo.png') }}"
+                                             alt="NovaTech University logo"/></a>
+        <h1><a href="{{ url_for('home') }}">NovaTech University</a></h1>
+    </div>
+
+    <nav class="site-navigation">
+        <ul class="nav">
+
+            <li><a style="background-color: lightseagreen" href="{{ url_for('login') }}">Dashboard</a></li>
+            <li><a href="{{ url_for('about') }}">About Us</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+<body>
+
+
+<div class="main-content-base1">
+
+    <main>
+
+        {% block content %}
+        {% endblock %}
+
+
+    </main>
+</div>
+
+</body>
+<br>
+<footer>
+    <div class="footer-container">
+        <div class="footer-social-media">
+            <h3>Connect with NovaTech University:</h3>
+            <ul>
+                <li><a href="#" target="_blank">Facebook</a></li>
+                <li><a href="#" target="_blank">Twitter</a></li>
+                <li><a href="#" target="_blank">Instagram</a></li>
+                <li><a href="#" target="_blank">LinkedIn</a></li>
+                <li><a href="#" target="_blank">YouTube</a></li>
+            </ul>
+        </div>
+        <div class="footer-contact">
+            <h3>Contact Us:</h3>
+            <p>NovaTech University</p>
+            <p>123 Innovation Way</p>
+            <p>Tech City, ST 98765</p>
+            <p>Phone: (555) 123-4567</p>
+            <p>Email: <a href="mailto:info@novatech.edu">info@novatech.edu</a></p>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <p>© 2023 NovaTech University. All Rights Reserved. <a href="#">Privacy Policy</a> | <a
+                href="#">Accessibility</a> | <a href="#">Non-Discrimination Statement</a></p>
+    </div>
+</footer>
+
+</html>

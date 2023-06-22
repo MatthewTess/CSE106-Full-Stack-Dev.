@@ -1,0 +1,32 @@
+{% extends 'student/base.html' %}
+
+{% block content %}
+
+
+    <h1>Student Dashboard</h1>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Class</th>
+                   <th>Teacher</th>
+                 <th>Time</th>
+                <th>Enrolled</th>
+                <th>Grade</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for enrollment in enrollments %}
+            <tr>
+                <td>{{ enrollment.class.class_name }}</td>
+                <td>{{ enrollment.class.class_teacher.name }}</td>
+                <td>{{ enrollment.class.time }}</td>
+                <td>{{ enrollment.class.enrolled }}/{{ enrollment.class.capacity }}</td>
+                <td>{{ enrollment.grade }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

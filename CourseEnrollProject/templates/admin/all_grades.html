@@ -1,0 +1,42 @@
+{% extends 'admin/base.html' %}
+
+{% block content %}
+
+
+    <h1>All Students and Grades</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Student ID</th>
+                <th>Student</th>
+                <th>Class ID</th>
+                 <th>Class Name</th>
+                   <th>Teacher</th>
+                 <th>Time</th>
+                <th>Enrolled</th>
+                <th>Grade</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for enrollment in enrollments %}
+            <tr>
+                <td>{{ enrollment.id }}</td>
+                <td>{{ enrollment.student_id }}</td>
+                <td>{{ enrollment.student.name }}</td>
+                <td>{{ enrollment.class_id }}</td>
+                <td>{{ enrollment.class.class_name }}</td>
+                <td>{{ enrollment.class.class_teacher.name }}</td>
+                <td>{{ enrollment.class.time }}</td>
+                <td>{{ enrollment.class.enrolled }}/{{ enrollment.class.capacity }}</td>
+                <td>{{ enrollment.grade }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+
+{% endblock %}

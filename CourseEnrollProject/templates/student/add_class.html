@@ -1,0 +1,67 @@
+{% extends "student/base.html" %}
+
+{% block content %}
+  <h2>Register for a Class</h2>
+  <p>View all classes and register for one below.</p>
+
+  {% if classes %}
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Class Name</th>
+          <th>Teacher</th>
+          <th>Time</th>
+          <th>Capacity</th>
+          <th>Enrolled</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for class in classes %}
+          <tr>
+            <td>{{ class.class_name }}</td>
+            <td>{{ class.teacher.name }}</td>
+            <td>{{ class.time }}</td>
+            <td>{{ class.capacity }}</td>
+            <td>{{ class.enrolled }}</td>
+            <td>
+              <form method="post" action="{{ url_for('register_class') }}">
+                <input type="hidden" name="class_id" value="{{ class.id }}">
+                <button type="submit" class="btn btn-primary">Register</button>
+              </form>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>No classes available.</p>
+  {% endif %}
+
+
+  <h1>Your Current Class</h1>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Class</th>
+                   <th>Teacher</th>
+                 <th>Time</th>
+                <th>Enrolled</th>
+                <th>Grade</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for enrollment in enrollments %}
+            <tr>
+                <td>{{ enrollment.class.class_name }}</td>
+                <td>{{ enrollment.class.class_teacher.name }}</td>
+                <td>{{ enrollment.class.time }}</td>
+                <td>{{ enrollment.class.enrolled }}/{{ enrollment.class.capacity }}</td>
+                <td>{{ enrollment.grade }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

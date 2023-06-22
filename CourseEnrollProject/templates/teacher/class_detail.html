@@ -1,0 +1,31 @@
+{% extends 'teacher/base.html' %}
+
+{% block content %}
+    <div>
+        <h3><a href="{{ url_for('classes') }}"> <--Back</a></h3>
+        <h3>Class: {{ class_name.class_name }}</h3>
+    </div>
+
+
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Student names</th>
+            <th>Grade</th>
+            <th>Remove</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for student in students %}
+            <tr>
+                <td>{{ student.student.name }}</td>
+                <td>
+                    <a href="{{ url_for('update_grade',class_id=class_id,student_id=student.student.id ) }}">{{ student.grade }}</a>
+                </td>
+                <td><a href="{{ url_for('delete_from_class',class_id=class_id, student_id=student.student.id) }}">X</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

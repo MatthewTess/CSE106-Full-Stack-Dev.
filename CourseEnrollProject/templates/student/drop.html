@@ -1,0 +1,33 @@
+{% extends 'student/base.html' %}
+
+{% block content %}
+  <h2>Hello, {{session.get('name')}}. Drop classes</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Class Name</th>
+        <th>Teacher</th>
+        <th>Time</th>
+        <th>Enrolled</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for class in classes %}
+        <tr>
+          <td>{{ class.class_name }}</td>
+          <td>{{ class.class_teacher.name }}</td>
+          <td>{{ class.time }}</td>
+          <td>{{ class.enrolled }}/{{ class.capacity }}</td>
+
+          <td>
+            <form action="{{ url_for('drop') }}" method="POST">
+              <input type="hidden" name="enrollment_id" value="{{ class.enrollments[0].id }}">
+              <button type="submit" class="btn btn-danger">Drop</button>
+            </form>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
