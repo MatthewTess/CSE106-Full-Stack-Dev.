@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../Style.css">
+    <style>
+        .banner {
+            width: 65%;
+            height: 200px;
+            background-image: url('../Images/banner.jpg');
+            background-size: cover;
+            background-position: center;
+            margin: 0 auto;
+            border-radius: 20px; /* Adjust the value as per your preference */
+            position: relative; /* Add position: relative to make it a reference for absolute positioning */
+        }
+
+        .banner-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: black;
+            font-size: 12px;
+            width: 100%; /* Adjust the width as per your preference */
+            max-width: 1000px; /* Set a maximum width to prevent the text from becoming too wide */
+            text-align: center;
+        }
+
+        .logo-wrapper {
+            text-align: center;
+            margin-bottom: 20px; /* Add some spacing between the logo and navigation bar */
+        }
+
+        footer {
+            background: none; /* Remove the background color */
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-small {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-small img {
+            width: 50px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        .footer-text {
+            font-size: 12px; /* Adjust the font size as desired */
+            text-align: right;
+            margin-left: auto; /* Add this line to push the text to the right */
+        }
+
+        .column-container {
+            display: flex;
+            justify-content: space-between;
+            background-color: pink;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 10px; /* Add a margin-top value to create space between the pink padding and the banner */
+            overflow: hidden;
+        }
+
+        .column {
+            flex-basis: 30%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: white;
+            margin-bottom: 20px;
+        }
+
+        .column img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            border-radius: 10px;
+        }
+
+        .column p {
+            margin-top: top 10px;
+            font-size: 12px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="logo-wrapper">
+        <div class="logo">
+            <img src="../Images/logo.png" alt="Logo" style="width: 200px; height: auto;">
+        </div>
+        <nav class="navMenu">
+            <a href="Home.html" id="this-page">Home</a>
+            <a href="Plants.html">Plants</a>
+            <a href="Video.html">Video</a>
+            <a href="About.html">About</a>
+            <div class="dot"></div>
+        </nav>
+    </div>
+</header>
+
+<div class="banner">
+    <div class="banner-text">
+        <h1>Promotion: 50% off all Lucky Shrub plants when you order as a member. If you are not
+            enrolled already, you can visit any store near you to get started!
+        </h1>
+    </div>
+</div>
+
+<section class="content-wrapper">
+    <div class="column-container">
+        <div class="column">
+            <img src="../Images/plants.jpg" alt="Image 1">
+            <p>Discover the excellence of our plants, transforming your spaces into vibrant havens.
+            Our store offers a diverse range of meticulously curated plant varieties. From lush
+            foliage plants to elegant bonsai trees, we have the perfect plant for every taste.
+            We source our plants from the best farms renowned for sustainable cultivation 
+            practices. Expert horticulturists ensure optimal care and nutrition, promoting
+            robust growth. Our plants thrive in various settings, thanks to their 
+            acclimatization. Experience the transformative power of nature with our 
+            top-notch, healthy plants.
+            </p>
+        </div>
+        <div class="column">
+            <img src="../Images/truck.jpg" alt="Image 2">
+            <p>We take pride in providing exceptional shipping services to ensure your plants reach you
+            safely and efficiently. With a variety of shipping options available, we strive to meet 
+            your specific needs. All shipped plants are in a room controlled enivronment all times
+            to ensure consistent quality across long distances. Choose between: Normal, Express, or
+            Premium shipping speeds.</p>
+        </div>
+        <div class="column">
+            <img src="../Images/money.jpg" alt="Image 3">
+            <p>If you would like to donate please visit our stores or you can mail to address:
+                3233 Random Road, San Francisco, CA. 92314-21267.
+            </p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="logo-small">
+        <img src="../Images/logo.png" alt="Logo" style="width: 50px; height: auto;">
+    </div>
+    <div class="footer-text">
+        Copyright: Lucky Shrub 2023
+    </div>
+</footer>
+</body>
+</html>

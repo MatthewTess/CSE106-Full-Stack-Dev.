@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../Style.css">
+    <style>
+        /* ...existing styles... */
+
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        .content-wrapper {
+            flex: 1;
+        }
+
+        footer {
+            background: none; /* Remove the background color */
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-small {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-small img {
+            width: 50px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        .footer-text {
+            font-size: 12px; /* Adjust the font size as desired */
+            text-align: right;
+            margin-left: auto; /* Add this line to push the text to the right */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <div class="logo">
+                    <img src="../Images/logo.png" alt="Logo" style="width: 200px; height: auto; display: block; margin: 0 auto;">
+                </div>              
+                <nav class="navMenu">
+                    <a href="Home.html">Home</a>
+                    <a href="Plants.html" id="this-page">Plants</a>
+                    <a href="Video.html">Video</a>
+                    <a href="About.html">About</a>
+                    <div class="dot"></div>
+                </nav>
+            </div>
+        </header>
+
+        <section class="content-wrapper">
+            <div class="contents">
+
+                <h1>5 Different Plants We Have</h1>
+                <div class="top-cats">
+
+                    <br>
+                    <ol>
+                        <li class="cats-top">Cactus Plants</li>
+                        <li class="cats-top">Venus Fly Trap Plants</li>
+                        <li class="cats-top">Rose Plants</li>
+                        <li class="cats-top">Peace Lily Plants</li>
+                        <li class="cats-top">Poison Ivy Plants</li>
+                    </ol>
+                </div>
+
+
+                <table class="tg">
+                    <thead>
+                        <tr>
+                            <th class="tg-0lax">Locations</th>
+                            <th class="tg-0lax">Cost</th>
+                            <th class="tg-0lax">Average life expectancy</th>
+                            <th class="tg-zd42">Color</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="tg-0lax">South America</td>
+                            <td class="tg-0lax">$10-$15</td>
+                            <td class="tg-0lax">1-2 years</td>
+                            <td class="tg-0lax">Green</td>
+                        </tr>
+                        <tr>
+                            <td class="tg-0lax">North Carolina</td>
+                            <td class="tg-0lax">$7-$10</td>
+                            <td class="tg-0lax">2-5 years</td>
+                            <td class="tg-0lax">Purple, Green</td>
+                        </tr>
+                        <tr>
+                            <td class="tg-0lax">Asia</td>
+                            <td class="tg-0lax">$5-$10</td>
+                            <td class="tg-0lax">1-2 years</td>
+                            <td class="tg-0lax">Green, Yellow</td>
+                        </tr>
+                        <tr>
+                            <td class="tg-0lax">Europe, Iran</td>
+                            <td class="tg-0lax">$80-$100</td>
+                            <td class="tg-0lax">4-6 years</td>
+                            <td class="tg-0lax">Blue, Green, White</td>
+                        </tr>
+                        <tr>
+                            <td class="tg-0lax">Everywhere</td>
+                            <td class="tg-0lax">$5-$10</td>
+                            <td class="tg-0lax">3-5 years</td>
+                            <td class="tg-0lax">Green, White</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <footer>
+            <div class="logo-small">
+                <img src="../Images/logo.png" alt="Logo" style="width: 50px; height: auto;">
+            </div>
+            <div class="footer-text">
+                Copyright: Lucky Shrub 2023
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
